@@ -1,7 +1,7 @@
 
 #Import required libraries
 import pymongo
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from bson.objectid import ObjectId
 from flask_cors import CORS,cross_origin
 
@@ -14,7 +14,9 @@ db = client.ROOT_ON
 app = Flask(__name__)
 CORS = (app)
 
-
+@app.route("/")
+def my_index():
+    return render_template("../frontend/public/index.html",flask_token="hello")
 
 #Create user
 @app.route('/userRegister', methods=['POST'])
