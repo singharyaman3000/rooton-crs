@@ -1,8 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import dotenv from "dotenv";
+dotenv.config()
 
-
-
+const url=`https://rooton-crs.onrender.com/:${process.env.PORT}`
 // const registerUser = (userData, navigate) => {
 //   axios
 //     .post(url + "register", userData)
@@ -34,7 +35,7 @@ import { toast } from "react-toastify";
 
 const profiledetail = (userData, navigate) => {
   axios
-    .post("http://127.0.0.1:5000/userRegister" ,userData)
+    .post(`${url}/userRegister` ,userData)
     .then(() => {
       toast("User Profile");
     })
@@ -48,7 +49,7 @@ const profiledetail = (userData, navigate) => {
 
 const collegedetail = (userData, navigate) => {
   axios
-    .post("http://127.0.0.1:5000/collegeRegister" ,userData)
+    .post(`${url}/collegeRegister` ,userData)
     .then(() => {
       toast("College register successfully");
     })
