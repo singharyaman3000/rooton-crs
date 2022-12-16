@@ -33,7 +33,7 @@
     "scripts": {
         "start:frontend": "react-scripts start",
         "start:backend": "cd .. && cd backend && python api.py",
-        "start": "npm-run-all --parallel start:*",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
