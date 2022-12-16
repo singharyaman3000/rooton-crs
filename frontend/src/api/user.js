@@ -44,7 +44,7 @@ const profiledetail = (userData, navigate) => {
       console.log(err);
       toast.error(
         `profile failed (${String(err.response.data.message)})`
-      );
+        );
     });
 };
 

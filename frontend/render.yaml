@@ -1,0 +1,10 @@
+# render.yaml
+
+env:
+  - name: PORT
+    value: "3000"
+
+services:
+  - name: app
+    src: .
+    command: ["python", "api.py"]

@@ -1,9 +1,11 @@
 
 #Import required libraries
 import pymongo
-from flask import Flask, request, jsonify,render_template
+from flask import Flask, request, jsonify,send_from_directory
 from bson.objectid import ObjectId
 from flask_cors import CORS,cross_origin
+import os
+
 
 
 #Connect to MongoDB Atlas
@@ -14,9 +16,15 @@ db = client.ROOT_ON
 app = Flask(__name__)
 CORS = (app)
 
-@app.route("/")
-def my_index():
-    return render_template('../frontend/build/index.html')
+
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, '../frontend/build/index.html')
 
 #Create user
 @app.route('/userRegister', methods=['POST'])
