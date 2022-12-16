@@ -14,6 +14,10 @@ db = client.ROOT_ON
 app = Flask(__name__)
 CORS = (app)
 
+@app.route("/")
+def my_index():
+    return render_template('../frontend/build/index.html')
+
 #Create user
 @app.route('/userRegister', methods=['POST'])
 @cross_origin()
