@@ -1,4 +1,0 @@
-pymongo
-flask
-bson
-flask_cors

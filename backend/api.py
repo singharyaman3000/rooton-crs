@@ -16,7 +16,7 @@ CORS = (app)
 
 @app.route("/")
 def my_index():
-    return render_template("../frontend/public/index.html",flask_token="hello")
+    return render_template("<h1>dhrumil ki chut</h1>",flask_token="hello")
 
 #Create user
 @app.route('/userRegister', methods=['POST'])
@@ -139,4 +139,4 @@ def update_user(user_id):
    
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, port=5001)
