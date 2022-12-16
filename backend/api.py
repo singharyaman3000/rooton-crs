@@ -14,10 +14,6 @@ db = client.ROOT_ON
 app = Flask(__name__)
 CORS = (app)
 
-@app.route("/")
-def my_index():
-    return render_template("<h1>dhrumil ki chut</h1>",flask_token="hello")
-
 #Create user
 @app.route('/userRegister', methods=['POST'])
 @cross_origin()
@@ -139,4 +135,4 @@ def update_user(user_id):
    
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(port=5000)
