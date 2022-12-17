@@ -19,12 +19,12 @@ url="https://root-on-crs.onrender.com"
 
 
 
-@app.route(f"{url}/")
+@app.route("/")
 def hello():
     return "Hello World!"
 
 #Create user
-@app.route('{url}/userRegister', methods=['POST'])
+@app.route('/userRegister', methods=['POST'])
 @cross_origin()
 def create_user():
     userdata = request.get_json()
@@ -83,7 +83,7 @@ def create_user():
     return jsonify({'user_id': str(user_id)}), 200
 
 
-@app.route('{url}/collegeRegister', methods=['POST'])
+@app.route('/collegeRegister', methods=['POST'])
 @cross_origin()
 def create_college():
     data = request.get_json()
@@ -126,7 +126,7 @@ def create_college():
 
 
 #Read user
-@app.route(f'{url}/user/<user_id>', methods=['GET'])
+@app.route('/user/<user_id>', methods=['GET'])
 def read_user(user_id):
     user = db.users.find_one({'_id': ObjectId(user_id)})
     if user:
@@ -144,4 +144,4 @@ def update_user(user_id):
    
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host=url)
