@@ -15,7 +15,6 @@ db = client.ROOT_ON
 #Initialize flask application
 app = Flask(__name__)
 CORS = (app)
-url="https://root-on-crs.onrender.com"
 
 
 
@@ -144,4 +143,4 @@ def update_user(user_id):
    
 
 if __name__ == '__main__':
-    app.run(host=url)
+    app.run()
