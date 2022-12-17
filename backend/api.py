@@ -24,7 +24,7 @@ def hello():
     return "Hello World!"
 
 #Create user
-@app.route(f'{url}/userRegister', methods=['POST'])
+@app.route('{url}/userRegister', methods=['POST'])
 @cross_origin()
 def create_user():
     userdata = request.get_json()
@@ -83,7 +83,7 @@ def create_user():
     return jsonify({'user_id': str(user_id)}), 200
 
 
-@app.route(f'{url}/collegeRegister', methods=['POST'])
+@app.route('{url}/collegeRegister', methods=['POST'])
 @cross_origin()
 def create_college():
     data = request.get_json()
