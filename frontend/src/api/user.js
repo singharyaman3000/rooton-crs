@@ -35,7 +35,7 @@ import { toast } from "react-toastify";
 
 const profiledetail = (userData, navigate) => {
   axios
-    .post("/userRegister" ,userData)
+    .post("http://localhost:5000/userRegister" ,userData)
     .then(() => {
       toast("User Profile");
       navigate('/userRegister')
