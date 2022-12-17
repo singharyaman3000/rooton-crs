@@ -32,9 +32,7 @@
         "yarn": "^1.22.19"
     },
     "scripts": {
-        "start:backend": "cd .. && cd backend && python api.py",
-        "start:frontend": "react-scripts start",
-        "start": "npm-run-all --parallel start:*",
+        "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
