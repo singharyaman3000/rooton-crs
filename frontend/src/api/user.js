@@ -35,7 +35,7 @@ import { toast } from "react-toastify";
 
 const profiledetail = (userData, navigate) => {
   axios
-    .post("http://localhost:5000/userRegister" ,userData)
+    .post("https://root-on-crs.onrender.com/userRegister" ,userData)
     .then(() => {
       toast("User Profile");
       navigate('/userRegister')
@@ -50,7 +50,7 @@ const profiledetail = (userData, navigate) => {
 
 const collegedetail = (userData, navigate) => {
   axios
-    .post("/collegeRegister" ,userData)
+    .post("https://root-on-crs.onrender.com/collegeRegister" ,userData)
     .then(() => {
       toast("College register successfully");
       navigate('/collegeRegister')

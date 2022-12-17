@@ -15,15 +15,16 @@ db = client.ROOT_ON
 #Initialize flask application
 app = Flask(__name__)
 CORS = (app)
+url="https://root-on-crs.onrender.com"
 
 
 
-@app.route("/")
+@app.route(f"{url}/")
 def hello():
     return "Hello World!"
 
 #Create user
-@app.route('/userRegister', methods=['POST'])
+@app.route(f'{url}/userRegister', methods=['POST'])
 @cross_origin()
 def create_user():
     userdata = request.get_json()
@@ -82,7 +83,7 @@ def create_user():
     return jsonify({'user_id': str(user_id)}), 200
 
 
-@app.route('/collegeRegister', methods=['POST'])
+@app.route(f'{url}/collegeRegister', methods=['POST'])
 @cross_origin()
 def create_college():
     data = request.get_json()
@@ -125,7 +126,7 @@ def create_college():
 
 
 #Read user
-@app.route('/user/<user_id>', methods=['GET'])
+@app.route(f'{url}/user/<user_id>', methods=['GET'])
 def read_user(user_id):
     user = db.users.find_one({'_id': ObjectId(user_id)})
     if user:
@@ -143,4 +144,4 @@ def update_user(user_id):
    
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run()
